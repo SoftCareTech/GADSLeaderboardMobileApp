@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:contentInsetStart="0dp"
+    android:contentInsetLeft="0dp"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/side_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leaderboard"
+        android:textAllCaps="true"
+
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/medium_font"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_submit"
+        android:gravity="center"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/medium_font"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:paddingTop="@dimen/appbar_padding_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorWhite"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="5dp"
+        app:tabMode="fixed"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

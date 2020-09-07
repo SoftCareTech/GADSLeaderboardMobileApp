@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">GADS Leaderboard Mobile App</string>
+    <string name="msg_confirm">Are you sure?</string>
+    <string name="btn_confirm">Yes</string>
+    <string name="submission_successfull">Submission successful</string>
+    <string name="question_mark">\?</string>
+    <string name="submission_unsuccessful">Submission not Successful</string>
+    <string name="leaderboard">LeaderBoard</string>
+    <string name="submit">Submit</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_on_github_link">Project on GITHUB(link)</string>
+    <string name="learning_hours">learning hours,</string>
+    <string name="skill_iq_scores">Skill IQ scores,</string>
+    <string name="developer_schoolarship">Developer Schoolarship</string>
+    <string name="google_africa">Google Africa</string>
+    <string name="cancle">cancle</string>
+    <string name="cancel">Cancle</string>
+</resources>

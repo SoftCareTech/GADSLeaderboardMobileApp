@@ -1,0 +1,38 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@layout/lauch</item>
+    </style>
+    <style name="ListTitle" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="paddingStart">5dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+
+    </style>
+    <style name="ListImage">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+
+    <style name="ListSubTitle" parent="android:Widget.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
