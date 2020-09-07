@@ -20,14 +20,14 @@ Name = entry.1877115667
 Last Name = entry.2006916086
 Link to project = entry.284483984
  */
-    @POST("1FAIpQLScmsi0l4q66caxFYYta7tRsSVR5_EZ_dBsvtvFhb6yco7Sqkg/formResponse")
+    @POST("1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
     @FormUrlEncoded
-    Call<NetworkSubmit> savePost(
-                        @Field("entry.1045781291") String email,
-                           @Field("entry.2005620554") String firstName,
-                           @Field("entry.808418281") String lastName,
+    Call<Void> savePost(
+                        @Field("entry.1824927963") String email,
+                           @Field("entry.1877115667") String firstName,
+                           @Field("entry.2006916086") String lastName,
                        /// @Field("entry.839337160") String track,
-                        @Field("entry.1065046570")  String githubLink
+                        @Field("entry.284483984")  String githubLink
 
 
                         /* ,@Field("fvv") String fvv,

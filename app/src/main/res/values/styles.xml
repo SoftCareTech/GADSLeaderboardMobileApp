@@ -5,7 +5,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@layout/lauch</item>
     </style>
     <style name="ListTitle" parent="@style/TextAppearance.AppCompat.Title">
         <item name="android:textSize">16sp</item>

@@ -58,28 +58,20 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
         if ( Ut.validateEditText(1,email,fistName,lastName,githubLink)  ) {
 
             if (Ut.isEmail(email.getText().toString()) ) {
-             Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("https://docs.google.com/forms/u/0/d/e/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                APIService apiService = retrofit.create(APIService.class);
                 mAPIService.savePost(email.getText().toString(),  fistName.getText().toString() ,
                         lastName.getText().toString(),   githubLink.getText().toString()  ) .
-                        enqueue(new Callback<NetworkSubmit>() {
+                        enqueue(new Callback<Void>() {
 
 
                             @Override
-                            public void onResponse(Call<NetworkSubmit> call, Response<NetworkSubmit> response) {
-
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                Log.i(Ut.TAG, "Response code" + response.code());
                                 if (response.isSuccessful()) {
-                                Log.i(Ut.TAG, "post submitted to API." + response.body().toString());
                                     confirmDialog.setContentView(R.layout.pop_sucess);
-                                } else {
-                                    Log.e(Ut.TAG, " ohh Unable to submit post to API.");
-                                    Log.e(Ut.TAG, response.message());
-                                    Log.e(Ut.TAG,  call.toString());
-                                    Log.e(Ut.TAG,  response.errorBody().toString());
-                                    Toast.makeText(ProjectSubmitionActivity.this, "ohh error occcured",
+                                } if(response.code()==200) {
+                                    confirmDialog.setContentView(R.layout.pop_sucess);
+                                }else {
+                                    Toast.makeText(ProjectSubmitionActivity.this, "ohh error occured",
                                             Toast.LENGTH_LONG).show();
                                 }
                                    // confirmDialog.setContentView(R.layout.pop_warning);
@@ -87,7 +79,7 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
                             }
 
                             @Override
-                            public void onFailure(Call<NetworkSubmit> call, Throwable t) {
+                            public void onFailure(Call<Void> call, Throwable t) {
                                 Log.e(Ut.TAG, "Unable to submit post to API." + t.getMessage());
                                 confirmDialog.setContentView(R.layout.pop_warning);
                             }

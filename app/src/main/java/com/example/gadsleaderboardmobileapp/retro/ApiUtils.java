@@ -4,7 +4,7 @@ package com.example.gadsleaderboardmobileapp.retro;
 
     private ApiUtils() {}
 
-    public static final String BASE_URL = "https://docs.google.com/forms/u/0/d/e/";
+    public static final String BASE_URL = "https://docs.google.com/forms/d/e/";
 
     public static APIService getAPIService() {
 
