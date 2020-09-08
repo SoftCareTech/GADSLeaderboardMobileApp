@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.gadsleaderboardmobileapp.Model.Ut;
@@ -33,16 +34,12 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_submition);
-
+        // set references
         mAPIService = ApiUtils.getAPIService();
         fistName = findViewById(R.id.first_name);
         lastName = findViewById(R.id.last_name);
         email = findViewById(R.id.email_address);
         githubLink = findViewById(R.id.git_link);
-        if (Ut.validateEditText(0, fistName, lastName, email, githubLink)) {
-            Toast.makeText(this, "okk", Toast.LENGTH_LONG).show();
-        }
-
         findViewById(R.id.btn_submit).setOnClickListener(this);
         findViewById(R.id.btn_back).setOnClickListener(this);
     }
@@ -51,18 +48,12 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
 
     private void submit() {
         final Dialog confirmDialog = new Dialog(ProjectSubmitionActivity.this);
-
-        confirmDialog.setCancelable(true);
-
-
-        if ( Ut.validateEditText(1,email,fistName,lastName,githubLink)  ) {
-
-            if (Ut.isEmail(email.getText().toString()) ) {
+        confirmDialog.setCancelable(true); // cancel dialog if click outside
+        if ( Ut.validateEditText(1,email,fistName,lastName,githubLink)  ) { // check if inputs are not empty
+            if (Ut.isEmail(email.getText().toString()) ) { // check if it an email
                 mAPIService.savePost(email.getText().toString(),  fistName.getText().toString() ,
                         lastName.getText().toString(),   githubLink.getText().toString()  ) .
                         enqueue(new Callback<Void>() {
-
-
                             @Override
                             public void onResponse(Call<Void> call, Response<Void> response) {
                                 Log.i(Ut.TAG, "Response code" + response.code());
@@ -71,10 +62,11 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
                                 } if(response.code()==200) {
                                     confirmDialog.setContentView(R.layout.pop_sucess);
                                 }else {
+                                    confirmDialog.setContentView(R.layout.pop_warning);
                                     Toast.makeText(ProjectSubmitionActivity.this, "ohh error occured",
                                             Toast.LENGTH_LONG).show();
                                 }
-                                   // confirmDialog.setContentView(R.layout.pop_warning);
+
 
                             }
 
@@ -111,14 +103,22 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
             case R.id.btn_submit: {
                 final Dialog confirmDialog = new Dialog(ProjectSubmitionActivity.this);
                 confirmDialog.setContentView(R.layout.pop_confirm);
-                confirmDialog.setCancelable(true);
-
+                confirmDialog.setCancelable(false);
+        confirmDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
                 confirmDialog.show();
                 confirmDialog.findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         confirmDialog.dismiss();
                         submit();
+
+                    }
+                });
+                confirmDialog.findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        confirmDialog.dismiss();
+                       confirmDialog.dismiss();
 
                     }
                 });

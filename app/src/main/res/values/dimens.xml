@@ -11,4 +11,5 @@
     <dimen name="big_header">22sp</dimen>
     <dimen name="medium_font">18sp</dimen>
     <dimen name="ico_size">150dp</dimen>
+    <dimen name="min_font">14sp</dimen>
 </resources>

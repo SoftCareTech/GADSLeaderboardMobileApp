@@ -53,10 +53,7 @@ public class SkillIQLeadersFragment extends  Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
         View rootView = inflater.inflate(R.layout.leaders, container, false);
-
         return rootView;
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -87,12 +84,12 @@ public class SkillIQLeadersFragment extends  Fragment {
 
 
                             for (int i = 0; i < response.length(); i++) {
-                                JSONObject hit = response.getJSONObject(i);
+                                JSONObject leader = response.getJSONObject(i);
 
-                                String name = hit.getString("name");
-                                String country = hit.getString("country");
-                                String badgeUrl = hit.getString("badgeUrl");
-                                int scores = hit.getInt("score");
+                                String name = leader.getString("name");
+                                String country = leader.getString("country");
+                                String badgeUrl = leader.getString("badgeUrl");
+                                int scores = leader.getInt("score");
 
                                 leaders.add(new Leaders( name,scores, country, badgeUrl));
                             }

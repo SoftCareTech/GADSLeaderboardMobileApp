@@ -83,12 +83,12 @@ public class LearningLeadersFragment extends Fragment {
 
 
                             for (int i = 0; i < response.length(); i++) {
-                                JSONObject hit = response.getJSONObject(i);
+                                JSONObject leader = response.getJSONObject(i);
 
-                                String name = hit.getString("name");
-                                int hours = hit.getInt("hours");
-                                String country = hit.getString("country");
-                                String badgeUrl = hit.getString("badgeUrl");
+                                String name = leader.getString("name");
+                                int hours = leader.getInt("hours");
+                                String country = leader.getString("country");
+                                String badgeUrl = leader.getString("badgeUrl");
 
                                 leaders.add(new Leaders( name,hours, country, badgeUrl));
                             }
