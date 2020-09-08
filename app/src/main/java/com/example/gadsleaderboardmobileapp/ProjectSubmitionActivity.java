@@ -48,6 +48,7 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
 
     private void submit() {
         final Dialog confirmDialog = new Dialog(ProjectSubmitionActivity.this);
+        confirmDialog.getWindow().setLayout( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         confirmDialog.setCancelable(true); // cancel dialog if click outside
         if ( Ut.validateEditText(1,email,fistName,lastName,githubLink)  ) { // check if inputs are not empty
             if (Ut.isEmail(email.getText().toString()) ) { // check if it an email
@@ -104,7 +105,7 @@ public class ProjectSubmitionActivity extends AppCompatActivity implements View.
                 final Dialog confirmDialog = new Dialog(ProjectSubmitionActivity.this);
                 confirmDialog.setContentView(R.layout.pop_confirm);
                 confirmDialog.setCancelable(false);
-        confirmDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        confirmDialog.getWindow().setLayout( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 confirmDialog.show();
                 confirmDialog.findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
                     @Override

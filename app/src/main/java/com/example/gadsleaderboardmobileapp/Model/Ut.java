@@ -74,23 +74,3 @@ public final class Ut {
 }
 
 
-
-/*
-
-
-
-
-
-
-
-
-https://docs.google.com/forms/u/0/d/e/1FAIpQLScmsi0l4q66caxFYYta7tRsSVR5_EZ_dBsvtvFhb6yco7Sqkg/formResponse
-Request Method: POST
-Status Code: 200
-Remote Address: 216.58.223.206:443
-Referrer Policy: strict-origin-when-cross-origin
-
-
-
-
- */

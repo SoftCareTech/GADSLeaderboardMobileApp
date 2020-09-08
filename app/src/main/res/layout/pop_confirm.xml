@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/pop_bacgroud"
     android:padding="@dimen/side_margin"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/cancel_button"
@@ -21,8 +21,8 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginBottom="@dimen/edit_gap"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="59dp"
         android:gravity="center"
         android:text="@string/msg_confirm"
         android:textColor="@color/colorPrimary"

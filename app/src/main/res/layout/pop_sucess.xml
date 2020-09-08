@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:padding="@dimen/side_margin"
     android:background="@drawable/pop_bacgroud"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -22,7 +22,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:padding="@dimen/side_margin"
+    android:paddingBottom="@dimen/side_margin"
+        android:paddingTop="@dimen/side_margin"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="wrap_content"
@@ -30,7 +31,6 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         android:textSize="@dimen/medium_font"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
